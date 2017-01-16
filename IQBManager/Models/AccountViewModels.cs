@@ -64,12 +64,10 @@ namespace IQBManager.Models
     public class RegisterViewModel
     {
         [Required]
-        [EmailAddress]
-        [Display(Name = "电子邮件")]
-        public string Email { get; set; }
+        [Display(Name = "登录账号")]
+        public string LoginId { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "{0} 必须至少包含 {2} 个字符。", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "密码")]
         public string Password { get; set; }
@@ -78,6 +76,11 @@ namespace IQBManager.Models
         [Display(Name = "确认密码")]
         [Compare("Password", ErrorMessage = "密码和确认密码不匹配。")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "身份证")]
+        public string IdentityCard { get; set; }
+
+     
     }
 
     public class ResetPasswordViewModel

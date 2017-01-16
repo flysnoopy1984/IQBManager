@@ -10,6 +10,7 @@ namespace IQBManager.Models
     {
         public DbSet<UserInfoModel> UserInfoList { get; set; }
 
+        public QBDbContext() : base("QBConnection") { }
 
     }
 }

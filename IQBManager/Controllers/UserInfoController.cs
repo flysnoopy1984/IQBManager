@@ -55,6 +55,7 @@ namespace IQBManager.Controllers
                 userInfoModel.RegDatetime = DateTime.Now;
                 db.UserInfoList.Add(userInfoModel);
                 db.SaveChanges();
+                
                 return RedirectToAction("Index");
             }
 
