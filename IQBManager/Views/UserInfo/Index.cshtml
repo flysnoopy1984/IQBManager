@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IQBManager.Models.UserInfoModel>
+﻿@model IEnumerable<IQBManager.Models.ApplicationUser>
 
 @{
     ViewBag.Title = "Index";
@@ -7,56 +7,52 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("CreateNew", "Register", "Account")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserNo)
-            @ViewBag.Test;
+            @Html.DisplayNameFor(model => model.UserName)
+            @ViewBag.Test
+        </th>
+          <th>
+            @Html.DisplayNameFor(model => model.LoginId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Password)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LoginID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pwd)
+            @Html.DisplayNameFor(model => model.PasswordHash)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IdentityCard)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RegDatetime)
-        </th>
+     
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserNo)
+            @Html.DisplayFor(modelItem => item.UserName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.LoginId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LoginID)
+            @Html.DisplayFor(modelItem => item.Password)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Pwd)
+            @Html.DisplayFor(modelItem => item.PasswordHash)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IdentityCard)
         </td>
+    
         <td>
-            @Html.DisplayFor(modelItem => item.RegDatetime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

@@ -68,6 +68,7 @@ namespace IQBManager.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+         
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -152,6 +153,8 @@ namespace IQBManager.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { LoginId = model.LoginId, IdentityCard= model.IdentityCard };
+                user.Password = model.Password;
+                user.UserName = model.LoginId;
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -163,7 +166,7 @@ namespace IQBManager.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "确认你的帐户", "请通过单击 <a href=\"" + callbackUrl + "\">這裏</a>来确认你的帐户");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "UserInfo");
                 }
                 AddErrors(result);
             }

@@ -172,3 +172,4 @@ C:\My\GitHub\IQBManager\IQBManager\bin\zh-Hans\Microsoft.Owin.Security.Twitter.r
 C:\My\GitHub\IQBManager\IQBManager\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 C:\My\GitHub\IQBManager\IQBManager\obj\Debug\IQBManager.dll
 C:\My\GitHub\IQBManager\IQBManager\obj\Debug\IQBManager.pdb
+C:\My\GitHub\IQBManager\IQBManager\obj\Debug\IQBManager.csprojResolveAssemblyReference.cache

@@ -11,6 +11,7 @@ namespace IQBManager.Models
     {
         public string LoginId { get; set; }
         public string IdentityCard { get; set; }
+        public string Password { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

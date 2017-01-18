@@ -8,9 +8,8 @@ namespace IQBManager.Models
 {
     public class QBDbContext: DbContext
     {
-        public DbSet<UserInfoModel> UserInfoList { get; set; }
-
-        public QBDbContext() : base("QBConnection") { }
+      //  public DbSet<ApplicationUser> UserInfoList { get; set; }
+        public QBDbContext() : base("DefaultConnection") { }
 
     }
 }

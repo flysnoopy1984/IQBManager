@@ -32,7 +32,7 @@ namespace IQBManager.Controllers
 
         public ActionResult Login()
         {
-            var users = from u in db.UserInfoList where u.LoginID == "Test" select u;
+          //  var users = from u in db.UserInfoList select u;
 
             return View();
         }

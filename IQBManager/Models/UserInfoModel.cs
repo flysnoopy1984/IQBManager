@@ -21,8 +21,5 @@ namespace IQBManager.Models
         public string IdentityCard { get; set; }
 
         public DateTime RegDatetime { get; set; }
-
-
-
     }
 }

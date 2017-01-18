@@ -17,11 +17,13 @@ namespace IQBManager.Controllers
         // GET: UserInfo
         public ActionResult Index()
         {
-            var users = from u in db.UserInfoList  select u;
-                        
+
+            // var userManager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            var users = db.Database.SqlQuery<ApplicationUser>("select * from AspNetUsers");
+          
             return View(users.ToList());
         }
-
+/*
         // GET: UserInfo/Details/5
         public ActionResult Details(int? id)
         {
@@ -52,7 +54,7 @@ namespace IQBManager.Controllers
         {
             if (ModelState.IsValid)
             {
-                userInfoModel.RegDatetime = DateTime.Now;
+              //  userInfoModel.RegDatetime = DateTime.Now;
                 db.UserInfoList.Add(userInfoModel);
                 db.SaveChanges();
                 
@@ -82,7 +84,7 @@ namespace IQBManager.Controllers
         // 详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,UserNo,Name,LoginID,Pwd,IdentityCard")] UserInfoModel userInfoModel)
+        public ActionResult Edit([Bind(Include = "ID,UserNo,Name,LoginID,Pwd,IdentityCard")] ApplicationUser userInfoModel)
         {
             if (ModelState.IsValid)
             {
@@ -127,5 +129,6 @@ namespace IQBManager.Controllers
             }
             base.Dispose(disposing);
         }
+        */
     }
 }
